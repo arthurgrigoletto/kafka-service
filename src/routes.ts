@@ -1,7 +1,10 @@
 import { Router } from 'express'
 
+import ShawController from './app/controllers/ShawController'
+
 const routes = Router()
 
-routes.get('/', (req, res) => res.json({ status: 'ok' }))
+routes.get('/', ShawController.index)
+routes.post('/', ShawController.dispatchMessage)
 
 export default routes
